@@ -260,7 +260,7 @@ void StorageCatBoostPool::createSampleBlockAndColumns()
         {
             auto alias = std::make_shared<ASTIdentifier>();
             alias->name = desc.alias;
-            column_defaults.emplace({desc.alias, {ColumnDefaultType::Alias, alias}});
+            column_defaults.emplace(desc.alias, {ColumnDefaultType::Alias, alias});
         }
 
         sample_block.insert(ColumnWithTypeAndName(type->createColumn(), type, desc.column_name));
